@@ -15,7 +15,12 @@ class BaseModel:
         print(f"[{type(self)}] ({self.id}) {self.__dict__}")
 
     def save(self):
-        self.updated_at = datetime.datetime.now().isoformat()
+        self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
-        return self.__dict__
+        temp = []
+        temp['id'] =  self.id
+        temp['__class__'] = self.__class__.__name__
+        temp['created_at'] = self.created_at.isoformat()
+        temp['updated_at'] = self.updated_at.isoformat()
+        return temp
