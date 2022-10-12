@@ -23,6 +23,7 @@ class FileStorage():
             f.write(json.dumps(objs))
 
     def reload(self):
+        FileStorage.__objects = {}
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:
                 file_content = f.read()
