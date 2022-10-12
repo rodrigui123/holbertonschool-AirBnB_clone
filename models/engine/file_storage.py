@@ -20,13 +20,15 @@ class FileStorage():
         for id in FileStorage.__objects:
             objs[id] = FileStorage.__objects[id].to_dict()
         with open(FileStorage.__file_path, 'w') as f:
+            f.seek(0)
             f.write(json.dumps(objs))
+            f.truncate()
 
     def reload(self):
-        FileStorage.__objects = {}
+        FileStorage.__objects.clear()
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:
                 file_content = f.read()
                 data = json.loads(file_content) if file_content is not None else []
                 for key, value in data.items():
-                    FileStorage.__objects[key] = BaseModel(value)
+                    FileStorage.__objects[key] = BaseModel(**value)
