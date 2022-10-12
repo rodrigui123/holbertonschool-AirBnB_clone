@@ -17,12 +17,13 @@ class FileStorage():
 
     def save(self):
         objs = {}
-        for obj in self.__objects:
-            objs[obj.id] = obj.to_dict()
+        for id in self.__objects:
+            objs[id] = self.__objects[id].to_dict()
         with open(self.__file_path, 'w') as f:
             f.write(json.dumps(objs))
 
     def reload(self):
+        self.__objects = {}
         if os.path.exists(self.__file_path):
             with open(self.__file_path, 'r') as f:
                 file_content = f.read()
