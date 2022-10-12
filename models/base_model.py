@@ -8,7 +8,7 @@ class BaseModel:
     number_of_instances = 0
 
     def __init__(self):
-        self.id = uuid.uuid4() + self.number_of_instances
+        self.id = int(uuid.uuid4()) + self.number_of_instances
         self.created_at = datetime.datetime.now()
         self.updated_at = datetime.datetime.now()
         self.number_of_instances += 1
