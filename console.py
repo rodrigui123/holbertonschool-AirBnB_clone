@@ -3,22 +3,21 @@
 
 
 import cmd
-from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
     """class HBNBcommand"""
     prompt = "(hbnb)"
 
-    def quit(self):
+    def do_quit(self):
         """quit func"""
         return True
 
-    def EOF(self):
+    def do_EOF(self):
         """end of file func"""
         return True
 
-    def empty_line(self, args):
+    def empty_line(self):
         """empty line + Enter should execute anything"""
         pass
 
