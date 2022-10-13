@@ -18,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
         """end of file func"""
         return True
 
-    def empty_line(self):
+    def emptyline(self):
         """empty line + Enter should execute anything"""
         pass
 
