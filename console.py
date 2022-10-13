@@ -3,13 +3,14 @@
 
 
 import cmd
+import sys
 
 
 class HBNBCommand(cmd.Cmd):
     """class HBNBcommand"""
     prompt = "(hbnb)"
 
-    def do_quit(self):
+    def do_quit(self, arg):
         """quit func"""
         return True
 
