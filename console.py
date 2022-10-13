@@ -3,6 +3,7 @@
 
 
 import cmd
+from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -20,3 +21,6 @@ class HBNBCommand(cmd.Cmd):
     def empty_line(self, args):
         """empty line + Enter should execute anything"""
         pass
+
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
