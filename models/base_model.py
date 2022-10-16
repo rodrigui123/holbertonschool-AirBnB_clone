@@ -5,7 +5,7 @@ import models
 
 
 class BaseModel:
-
+    
     def __init__(self, *args, **kwargs):
         if kwargs:
             for key, value in kwargs.items():

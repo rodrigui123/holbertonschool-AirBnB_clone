@@ -3,7 +3,6 @@
 
 import json
 import os
-
 from models.base_model import BaseModel
 
 
@@ -15,9 +14,16 @@ class FileStorage():
         return FileStorage.__objects
 
     def new(self, obj):
-        FileStorage.__objects[obj.id] = obj
+        FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
+
+    def destroy(self, id):
+        del FileStorage.__objects[id]
+        self.save()
 
     def save(self):
+        """
+        The above function saves the objects in the FileStorage class to a JSON file.
+        """
         objs = {}
         for id in FileStorage.__objects:
             objs[id] = FileStorage.__objects[id].to_dict()
@@ -27,6 +33,9 @@ class FileStorage():
             f.truncate()
 
     def reload(self):
+        """
+        This function reloads the data from the json file
+        """
         FileStorage.__objects.clear()
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:
