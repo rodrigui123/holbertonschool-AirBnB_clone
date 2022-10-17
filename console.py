@@ -31,6 +31,7 @@ def get_instance(args):
         print("** no instance found **")
         return None
 
+
 class HBNBCommand(cmd.Cmd):
     """class HBNBcommand"""
     prompt = "(hbnb)"
@@ -42,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
         elif globals().get(arg) is None:
             print("** class doesn't exist **")
             return
-        
+
         new_base = globals()[arg]()
         new_base.save()
         print(new_base.id)
@@ -81,10 +82,10 @@ class HBNBCommand(cmd.Cmd):
             if len(args) == 3:
                 print("** value missing **")
                 return
-            
+
             selected_object.__dict__[args[2]] = args[3]
             models.storage.save()
- 
+
     def do_quit(self, arg):
         """quit func"""
         return True
