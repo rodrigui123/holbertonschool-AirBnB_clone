@@ -3,10 +3,6 @@
 
 
 import cmd
-import sys
-
-from requests import delete
-
 from models.base_model import BaseModel
 from models.user import User
 from models.amenity import Amenity
@@ -15,6 +11,7 @@ from models.city import City
 from models.review import Review
 from models.place import Place
 import models
+
 
 def get_instance(args):
     if len(args) == 0:
@@ -55,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
         selected_object = get_instance(args)
         if selected_object is not None:
             print(selected_object)
-        
+
     def do_destroy(self, arg):
         args = arg.split()
         selected_object = get_instance(args)
@@ -87,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
             
             selected_object.__dict__[args[2]] = args[3]
             models.storage.save()
-        
+ 
     def do_quit(self, arg):
         """quit func"""
         return True
