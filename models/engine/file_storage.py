@@ -28,7 +28,8 @@ class FileStorage():
 
     def save(self):
         """
-        The above function saves the objects in the FileStorage class to a JSON file.
+        The above function saves the objects in the FileStorage class \
+            to a JSON file.
         """
         objs = {}
         for id in FileStorage.__objects:
@@ -46,6 +47,8 @@ class FileStorage():
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:
                 file_content = f.read()
-                data = json.loads(file_content) if file_content is not None else []
+                data = json.loads(file_content) \
+                    if file_content is not None else []
                 for key, value in data.items():
-                    FileStorage.__objects[key] =  globals()[value['__class__']](**value)
+                    FileStorage.__objects[key] = \
+                        globals()[value['__class__']](**value)
