@@ -33,14 +33,16 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb)"
 
     def do_create(self, arg):
-        if (arg == "BaseModel"):
-            new_base = BaseModel()
-            new_base.save()
-            print(new_base.id)
-        elif (len(arg) == 0):
+        if len(arg) == 0:
+            print("** class name missing **")
+            return
+        elif globals().get(arg) is None:
             print("** class doesn't exist **")
-        else:
-            print("** class name missing **") 
+            return
+        
+        new_base = BaseModel()
+        new_base.save()
+        print(new_base.id)
 
     def do_show(self, arg):
         args = arg.split()
@@ -77,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
                 return
             
-            selected_object.__dict__[args[3]] = args[4]
+            selected_object.__dict__[args[2]] = args[3]
             models.storage.save()
         
     def do_quit(self, arg):
