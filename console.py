@@ -8,6 +8,7 @@ import sys
 from requests import delete
 
 from models.base_model import BaseModel
+from models.user import User
 import models
 
 def get_instance(args):
@@ -40,7 +41,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         
-        new_base = BaseModel()
+        new_base = globals()[arg]()
         new_base.save()
         print(new_base.id)
 

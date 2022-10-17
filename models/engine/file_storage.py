@@ -4,6 +4,7 @@
 import json
 import os
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage():
@@ -42,4 +43,4 @@ class FileStorage():
                 file_content = f.read()
                 data = json.loads(file_content) if file_content is not None else []
                 for key, value in data.items():
-                    FileStorage.__objects[key] = BaseModel(**value)
+                    FileStorage.__objects[key] =  globals()[value['__class__']](**value)
