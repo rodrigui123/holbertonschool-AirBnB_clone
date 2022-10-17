@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """python interpreter"""
-
-
 from models.base_model import BaseModel
 
 
