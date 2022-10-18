@@ -4,7 +4,7 @@ import unittest
 from models.base_model import BaseModel
 
 
-class BaseModelTest(unittest.TestCase):
+class BaseModelClass(unittest.TestCase):
     def test_save(self):
         base = BaseModel()
         created_at = base.created_at
