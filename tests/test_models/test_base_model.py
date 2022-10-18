@@ -16,7 +16,7 @@ class BaseModelClass(unittest.TestCase):
     def test_to_dict(self):
         base = BaseModel()
         temp = {}
-        temp['id'] = self.id
+        temp['id'] = base.id
         temp['__class__'] = base.__class__.__name__
         temp['created_at'] = base.created_at.isoformat()
         temp['updated_at'] = base.updated_at.isoformat()
