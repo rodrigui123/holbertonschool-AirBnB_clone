@@ -17,9 +17,9 @@ class BaseModelClass(unittest.TestCase):
         base = BaseModel()
         temp = {}
         temp['id'] = self.id
-        temp['__class__'] = self.__class__.__name__
-        temp['created_at'] = self.created_at.isoformat()
-        temp['updated_at'] = self.updated_at.isoformat()
+        temp['__class__'] = base.__class__.__name__
+        temp['created_at'] = base.created_at.isoformat()
+        temp['updated_at'] = base.updated_at.isoformat()
         self.assertEqual(temp, base.to_dict())
 
     def test_save(self):
