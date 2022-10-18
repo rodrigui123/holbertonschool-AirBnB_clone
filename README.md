@@ -16,6 +16,7 @@ The model system; this part of the proyect contains all functions in order to **
 
 The **engine**, is based on a JSON file, it is able to handle the process of serialization and deserialization of an object. 
  
+
 ## How to use the interpreter
 The console as the shell, can be run both interactive and non interactive mode. To run the console in a non interactive mode you can pipe any command into an execution of the console.py file at the command line.
 
@@ -26,13 +27,14 @@ To run it in interactive mode, you should run the console.py file by itself.
 While you run that, a prompt ("(hbnb)") will be displayed for input to enter any of the named commands.
 
     rodrigolivera$ ./console.py
-(hbnb)
+	(hbnb)
 
 To exit the console type **quit** or the end of file signal (EOF) ctrl + d.
 
     rodrigolivera$ ./console.py
-(hbnb)quit
-Rodrigos-MacBook-Air:holbertonschool-AirBnB_clone rodrigolivera$ 
+	(hbnb)quit
+	Rodrigos-MacBook-Air:holbertonschool-AirBnB_clone 
+	rodrigolivera$ 
 
 
 ## Object-attributes
