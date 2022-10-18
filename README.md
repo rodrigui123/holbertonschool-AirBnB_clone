@@ -17,6 +17,14 @@ The model system; this part of the proyect contains all functions in order to **
 
 The **engine**, is based on a JSON file, it is able to handle the process of serialization and deserialization of an object. 
  
+## How to install and run our AirBnB
+To install our program, run the following command in your terminal
+
+	git clone https://github.com/rodrigui123/holbertonschool-AirBnB_clone.git
+
+To execute:
+	
+	./console.py
 
 ## How to use the interpreter
 The console as the shell, can be run both interactive and non interactive mode. To run the console in a non interactive mode you can pipe any command into an execution of the console.py file at the command line.
@@ -45,18 +53,20 @@ BaseModel: id, updated_at, created_at
 
 ### Specific object-attribute
  
-**Review**  : place_id, user_id, text 
 
-**User** : email, password, first_name, last_name
-  
- **Place**  : city_id, user_id, name, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids
-    
- **Amenity**  : name
-    
- **State**  : name
-    
- **City**  : state_id, name
-
+|User|Place | Amenity | State | City| 
+|----|------|---------|-------|-----|
+| email | city_id | name |name | state_id|
+|password| user_id ||| name|
+| first_name|name||||
+|last_name|description ||||
+||number_rooms||||
+||number_bathroms||||
+||max_guest||||
+|| price_by_night||||
+||latitude||||
+||longitude||||
+||amenity_ids||||
 
 
 ## 	Contributors
