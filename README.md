@@ -21,9 +21,18 @@ The console as the shell, can be run both interactive and non interactive mode. 
 
 To run it in interactive mode, you should run the console.py file by itself.
 
+    Rodrigos-MacBook-Air:holbertonschool-AirBnB_clone rodrigolivera$ ./console.py
+
 While you run that, a prompt ("(hbnb)") will be displayed for input to enter any of the named commands.
 
+    rodrigolivera$ ./console.py
+(hbnb)
+
 To exit the console type **quit** or the end of file signal (EOF) ctrl + d.
+
+    rodrigolivera$ ./console.py
+(hbnb)quit
+Rodrigos-MacBook-Air:holbertonschool-AirBnB_clone rodrigolivera$ 
 
 
 ## Object-attributes
