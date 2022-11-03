@@ -80,7 +80,7 @@
     border-radius: 4px;
     margin-right: 30px;
     background-color: #ff5a5f;
-    margin-left: auto; /* push button to the right */
+    margin-left: auto;
   }
 
   .filters button:hover {
